@@ -1,17 +1,17 @@
+# This code basically takes number of screenshots and combines it together to make a video file and save it as recording.avi
 # importing the required packages
 import pyautogui
 import numpy as np
 # Specify resolution
 resolution = (1920, 1080)
 
-# Specify video codec
+#  video codec
 codec = cv2.VideoWriter_fourcc(*"XVID")
 
-# Specify name of Output file
+# Specify name of Output file this file will be saved in the current code directory
 filename = "Recording.avi"
 
-# Specify frames rate. We can choose any
-# value and experiment with it
+# Current frame rate ,change if there are lags in the recording
 fps = 60.0
 
 
@@ -45,7 +45,6 @@ while True:
 	if cv2.waitKey(1) == ord('q'):
 		break
 
-# Release the Video writer
 out.release()
 
 # Destroy all windows
